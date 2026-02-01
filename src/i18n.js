@@ -28,7 +28,7 @@ const resources = {
             "about_company": "About Company",
             "footer_description": "We are leaders in providing luxury and economy mobility solutions. We provide a fleet of the latest cars to meet your needs with the highest standards of quality and comfort.",
             "our_location": "Our Location",
-            "address_details": "Cairo, Nasr City, Abbas El Akkad St.",
+            "address_details": "Kuwait, plot 50, Al-Ardiya 92400.",
             "open_daily": "Open Daily",
             "working_hours": "9:00 AM - 10:00 PM",
             // في قسم en:

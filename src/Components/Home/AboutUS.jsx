@@ -4,8 +4,8 @@ import { Zoom } from "react-awesome-reveal";
 import { useTranslation } from "react-i18next";
 
 import luxuryImg from "/public/غلاف-موقع.png";
-import suvImg from "/public/5f0d5229e9c27Ford_Bronco_4_door_2021_front_dubai_uae.jpg";
-import economyImg from "/public/فيات-الإيطالية.jpeg";
+import suvImg from "/public/غلاف-موقع.png";
+import economyImg from "/public/غلاف-موقع.png";
 import airportImg from "/public/aitbotr.jpg";
 import vipImg from "/public/بسائق.jpg";
 
