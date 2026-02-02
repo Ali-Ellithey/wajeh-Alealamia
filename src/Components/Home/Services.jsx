@@ -15,10 +15,10 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
 // استيراد الصور (تأكد من صحة المسارات)
-import imgs from "/public/غلاف-موقع.png";
-import imgs2 from "../../img_car/corfet-22-23.png";
-import imgs3 from "../../img_car/cars/tyota-fa.png";
-import imgs4 from "../../img_car/cars/askled.png";
+import imgs from "/public/غلاف.png";
+import imgs2 from "/public/رياضية-1.png";
+import imgs3 from "/public/فارهة.png";
+import imgs4 from "/public/رياضية-1.png";
 
 export const Services = () => {
   const { t } = useTranslation();

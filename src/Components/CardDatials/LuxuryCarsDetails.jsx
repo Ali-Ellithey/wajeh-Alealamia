@@ -17,9 +17,9 @@ import img1 from "../../img_car/cars/mustang.png";
 import img2 from "../../img_car/5f0d5229e9c27Ford_Bronco_4_door_2021_front_dubai_uae.jpg";
 
 // استيراد صور السلايدر العلوي (Hero Slider)
-import imgSlider1 from "/public/غلاف-موقع.png";
-import imgSlider2 from "../../Images/rent-Rolls-Royce-Cullinan-in-Dubai--900x600.jpg";
-import imgSlider3 from "../../Images/GMC-Yukon-Denali-rental-price-in-dubai-900x600.jpg";
+import imgSlider1 from "/public/غلاف.png";
+import imgSlider2 from "/public/فارهة.png";
+import imgSlider3 from "/public/رياضية-1.png";
 
 const LuxuryCarsDetails = () => {
   const { t } = useTranslation();
@@ -110,6 +110,7 @@ const LuxuryCarsDetails = () => {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2 }}
+                    className="slider-title" // تأكد من إضافة هذا الكلاس هنا
                   >
                     {item.title}
                   </motion.h1>
