@@ -1036,8 +1036,9 @@ html {
 .slider-title {
   font-size: 2.2rem !important; /* قمت بتصغيره من 3.5rem إلى 2.2rem */
   font-weight: 800;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.415);
   color: #fff;
+  padding-bottom: 3px;
 }
 
 .slider-title span {
@@ -1047,15 +1048,12 @@ html {
 /* --- تعديل حجم الخط للموبايل --- */
 @media (max-width: 767px) {
   .slider-container {
-    height: 40vh; /* تقليل الارتفاع قليلاً ليناسب الخط الصغير */
+    height: 50vh; /* تقليل الارتفاع قليلاً ليناسب الخط الصغير */
   }
   .slider-title {
     margin-bottom: 15px !important;
     font-size: 1.2rem !important; /* حجم صغير جداً ومناسب للموبايل */
     line-height: 1.4;
-  }
-  .line {
-    width: 60px; /* تصغير الخط البرتقالي أيضاً ليناسب النص */
-    height: 3px;
+    padding-bottom: 5px;
   }
 }

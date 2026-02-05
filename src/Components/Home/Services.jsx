@@ -52,7 +52,7 @@ export const Services = () => {
   ];
 
   return (
-    <div className="Services py-5" id="Services">
+    <div className="Services py-2" id="Services">
       <Container>
         <div className="title text-center mb-5">
           <h1 className="fw-bold">{t("fleet.title")}</h1>

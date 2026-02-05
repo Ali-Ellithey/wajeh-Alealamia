@@ -164,6 +164,9 @@ const resources = {
                     "text": "“Rent your luxury car in three easy steps with Wahaj. We believe driving should be easy and enjoyable. Wahaj is your gateway to the world of luxury travel in Kuwait. Book your dream car instantly via WhatsApp with no forms or advance payments.”"
                 }
             }
+            , "brands_section": {
+                "title": "More than one international brand is part of our fleet"
+            }
 
         }
     },
@@ -322,7 +325,12 @@ const resources = {
                 "slide2": {
                     "text": "“استأجر سيارتك الفاخرة بثلاث خطوات سهلة مع شركة وهج العالمية لتأجير السيارات. نؤمن بأن القيادة يجب أن تكون سهلة وممتعة. واهج هي بوابتك إلى عالم السفر الفاخر في الكويت. يمكنك حجز سيارة أحلامك فورًا عبر واتساب بدون استمارات أو دفعات مقدمة.”"
                 }
+            },
+            "brands_section": {
+                "title": "أكثر من ماركة عالمية جزء من أسطولنا"
             }
+
+
 
 
         }
