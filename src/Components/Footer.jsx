@@ -5,102 +5,170 @@ import {
   FaInstagram,
   FaPhoneAlt,
   FaMapMarkerAlt,
-  FaCar,
+  FaChevronLeft,
 } from "react-icons/fa";
-import { useTranslation } from "react-i18next"; // 1️⃣ استيراد هوك الترجمة
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
+import Logo from "/public/logo.png";
 
 export const Footer = () => {
   const { t } = useTranslation();
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer
-      className="footer text-white py-5 mt-auto"
-      style={{
-        borderTop: "4px solid #fc8b1a",
-        backgroundColor: "#212741",
-      }}
-    >
-      <Container>
-        <Row className="gy-5 align-items-center">
-          <Col xs={12} md={4} className="text-center text-md-start">
-            <h5 className="mb-4 fw-bold" style={{ color: "#fc8b1a" }}>
-              {t("contact_us")}
-            </h5>
-            <div className="d-flex justify-content-center justify-content-md-start gap-4 fs-2">
+    <footer className="new-footer text-white">
+      <div className="footer-top-bar"></div>
+
+      <Container className="py-5">
+        <Row className="gy-4">
+          <Col lg={4} md={12} className="text-center text-lg-start">
+            <div className="footer-brand mb-3">
+              {/* تعديل الـ Motion Image لضمان الأبعاد */}
+              <motion.img
+                src={Logo}
+                alt="Wahaj Logo"
+                className="footer-logo-img mb-2"
+                whileHover={{ scale: 1.05 }}
+              />
+              <div className="fw-bold fs-3 text-uppercase">
+                WAHAJ <span style={{ color: "#fc8b1a" }}>CAR</span>
+              </div>
+            </div>
+            <p className="footer-desc opacity-75">{t("footer_description")}</p>
+            <div className="social-pills d-flex justify-content-center justify-content-lg-start gap-3 mt-4">
               <a
                 href="https://wa.me/+96590930061"
                 target="_blank"
                 rel="noreferrer"
-                className="text-white decoration-none"
+                className="social-pill whatsapp"
               >
-                <FaWhatsapp
-                  className="footer-icon"
-                  style={{ transition: "0.3s", cursor: "pointer" }}
-                  onMouseOver={(e) => (e.target.style.color = "#25D366")}
-                  onMouseOut={(e) => (e.target.style.color = "white")}
-                />
+                <FaWhatsapp />
               </a>
               <a
-                href="https://www.instagram.com/wahajcar2/?igsh=MWJrYnk3dXR1dXl2NQ%3D%3D#"
+                href="https://www.instagram.com/wahajcar2"
                 target="_blank"
                 rel="noreferrer"
-                className="text-white decoration-none"
+                className="social-pill instagram"
               >
-                <FaInstagram
-                  className="footer-icon"
-                  style={{ transition: "0.3s", cursor: "pointer" }}
-                  onMouseOver={(e) => (e.target.style.color = "#E1306C")}
-                  onMouseOut={(e) => (e.target.style.color = "white")}
-                />
+                <FaInstagram />
               </a>
-              <a href="tel:+96590930061" className="text-white decoration-none">
-                <FaPhoneAlt
-                  className="footer-icon"
-                  style={{ transition: "0.3s", cursor: "pointer" }}
-                  onMouseOver={(e) => (e.target.style.color = "#fc8b1a")}
-                  onMouseOut={(e) => (e.target.style.color = "white")}
-                />
+              <a href="tel:+96590930061" className="social-pill phone">
+                <FaPhoneAlt />
               </a>
             </div>
           </Col>
 
-          <Col
-            xs={12}
-            md={4}
-            className="text-center px-4 border-md-start border-md-end border-secondary"
-          >
-            <div className="mb-3">
-              <FaCar size={45} style={{ color: "#fc8b1a" }} />
-            </div>
-            <h5 className="fw-bold mb-3" style={{ color: "#fc8b1a" }}>
-              {t("about_company")}
-            </h5>
-            <p className="small lh-lg opacity-75 mb-0">
-              {t("footer_description")}
-            </p>
+          <Col lg={4} md={6} className="text-center">
+            <h5 className="section-title mb-4">{t("quick_links")}</h5>
+            <ul className="footer-links list-unstyled">
+              <li className="mb-2">
+                <Link
+                  to="/"
+                  className="footer-route-link"
+                  onClick={scrollToTop}
+                >
+                  <FaChevronLeft className="link-arrow" /> {t("home")}
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link
+                  to="/luxury-cars-details"
+                  className="footer-route-link"
+                  onClick={scrollToTop}
+                >
+                  <FaChevronLeft className="link-arrow" /> {t("luxury_cars")}
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link
+                  to="/suv-cars-details"
+                  className="footer-route-link"
+                  onClick={scrollToTop}
+                >
+                  <FaChevronLeft className="link-arrow" /> {t("suv_cars")}
+                </Link>
+              </li>
+              <li className="mb-2">
+                <Link
+                  to="/economy-cars-details"
+                  className="footer-route-link"
+                  onClick={scrollToTop}
+                >
+                  <FaChevronLeft className="link-arrow" /> {t("economy_cars")}
+                </Link>
+              </li>
+            </ul>
           </Col>
 
-          <Col xs={12} md={4} className="text-center text-md-end">
-            <h5 className="mb-4 fw-bold" style={{ color: "#fc8b1a" }}>
-              {t("our_location")}
-            </h5>
-            <div className="d-flex align-items-center justify-content-center justify-content-md-end gap-2 mb-2">
-              <span className="fs-6 opacity-75">{t("address_details")}</span>
-              <FaMapMarkerAlt className="text-danger fs-4" />
-            </div>
-            <div className="mt-3">
-              <p className="small text-muted mb-0">
-                <span className="d-block" style={{ color: "#fc8b1a" }}>
-                  {t("open_daily")}
-                </span>
-                <span className="d-block mb-2" style={{ color: "#fc8b1a" }}>
-                  {t("working_hours")}
-                </span>
+          <Col lg={4} md={6} className="text-center text-lg-end">
+            <h5 className="section-title mb-4">{t("contact_info")}</h5>
+            <div className="contact-item mb-3">
+              <p className="mb-1 fw-bold">{t("our_location")}</p>
+              <p className="opacity-75 small">
+                <FaMapMarkerAlt className="text-warning me-2" />{" "}
+                {t("address_details")}
               </p>
+            </div>
+            <div className="contact-item">
+              <p className="mb-1 fw-bold">{t("working_hours")}</p>
+              <p className="opacity-75 small mb-0">{t("open_daily")}</p>
+              <p className="opacity-75 small">{t("working_hours_details")}</p>
             </div>
           </Col>
         </Row>
       </Container>
+
+      <div className="footer-bottom py-3">
+        <Container className="text-center">
+          <p className="mb-0 small opacity-50 text-ltr">
+            &copy; {new Date().getFullYear()} Wahaj Al-Alamiah. All Rights
+            Reserved.
+          </p>
+        </Container>
+      </div>
+
+      <style>{`
+        .new-footer { 
+          background: linear-gradient(145deg, #1a1e2e 0%, #0f121d 100%); 
+          position: relative; 
+          border-radius: 40px 40px 0 0; 
+          overflow: hidden; 
+        }
+
+        /* تعديل اللوجو لمنع التمدد والحفاظ على التناسب */
+        .footer-logo-img { 
+          height: 60px; /* يمكنك تعديل الرقم حسب الحجم المطلوب */
+          width: auto; 
+          object-fit: contain; 
+          display: block;
+          filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
+        }
+
+        /* ضمان توسيط اللوجو في الشاشات الصغيرة */
+        @media (max-width: 991px) {
+          .footer-logo-img {
+            margin: 0 auto;
+          }
+        }
+
+        .footer-route-link { text-decoration: none !important; color: rgba(255,255,255,0.7) !important; display: inline-flex; align-items: center; transition: 0.3s ease; }
+        .footer-route-link:hover { color: #fc8b1a !important; transform: translateX(-5px); }
+        .footer-top-bar { height: 6px; background: linear-gradient(90deg, transparent, #fc8b1a, transparent); width: 80%; margin: 0 auto; }
+        .section-title { color: #fc8b1a; font-weight: 700; text-transform: uppercase; }
+        .link-arrow { font-size: 0.7rem; margin-left: 8px; color: #fc8b1a; }
+        .social-pill { width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: white; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .whatsapp:hover { background: #25D366; color: #fff; }
+        .instagram:hover { background: #E1306C; color: #fff; }
+        .phone:hover { background: #fc8b1a; color: #fff; }
+        .footer-bottom { background: rgba(0,0,0,0.2); border-top: 1px solid rgba(255,255,255,0.05); }
+        .text-ltr { direction: ltr; display: inline-block; }
+        @media (max-width: 991px) { .new-footer { border-radius: 0; } }
+      `}</style>
     </footer>
   );
 };

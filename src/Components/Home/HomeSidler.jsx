@@ -141,7 +141,7 @@ export const HomeSidler = () => {
 
         {/* تعديل هائل هنا: إضافة direction: ltr لضمان عمل السلايدر في العربي */}
         <div
-          className="d-flex overflow-hidden position-relative pt-4"
+          className="d-flex overflow-hidden position-relative pt-1"
           style={{ direction: "ltr" }}
         >
           <motion.div
@@ -152,7 +152,7 @@ export const HomeSidler = () => {
               duration: 25,
               repeat: Infinity,
             }}
-            style={{ whiteSpace: "nowrap", display: "flex", gap: "70px" }}
+            style={{ whiteSpace: "nowrap", display: "flex", gap: "45px" }}
           >
             {[...brands, ...brands].map((brand, index) => (
               <div
