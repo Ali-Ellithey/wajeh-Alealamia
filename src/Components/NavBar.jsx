@@ -11,7 +11,6 @@ export const NavBar = () => {
 
   const closeMenu = () => setExpanded(false);
 
-  // دالة لتغيير اللغة وتحديث اتجاه الموقع (RTL/LTR)
   const handleLangChange = (lang) => {
     i18n.changeLanguage(lang);
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
@@ -19,7 +18,6 @@ export const NavBar = () => {
     closeMenu();
   };
 
-  // تأكيد الضبط عند تحميل الموقع لأول مرة
   useEffect(() => {
     document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
     document.documentElement.lang = i18n.language;
@@ -38,7 +36,7 @@ export const NavBar = () => {
         />
 
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          <Nav className="align-items-center mx-auto">
+          <Nav className="align-items-center mx-auto text-center">
             <Nav.Link as={Link} to="/" onClick={closeMenu}>
               {t("home")}
             </Nav.Link>
@@ -61,19 +59,51 @@ export const NavBar = () => {
             </Nav.Link>
           </Nav>
 
-          <div className="d-flex align-items-center">
-            {/* أزرار التبديل - ستتغير ألوانها تلقائياً عند الضغط */}
+          {/* الحاوية المشتركة للأيقونات واللغة */}
+          <div className="d-flex flex-column flex-lg-row align-items-center gap-1 mt-1 mt-lg-0">
+            {/* حاوية أيقونات السوشيال ميديا بستايل الفوتر */}
+            <div className="social-icons-wrapper d-flex align-items-center mb-3 mb-lg-0">
+              <a
+                href="tel:+96590930061"
+                onClick={closeMenu}
+                className="nav-social-icon phone-icon"
+              >
+                <i className="fas fa-phone"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/wahajcar2/"
+                target="_blank"
+                rel="noreferrer"
+                className="nav-social-icon instagram-icon"
+                onClick={closeMenu}
+              >
+                <i className="fab fa-instagram"></i>
+              </a>
+
+              <a
+                href="https://wa.me/+96590930061"
+                target="_blank"
+                rel="noreferrer"
+                className="nav-social-icon whatsapp-icon"
+                onClick={closeMenu}
+              >
+                <i className="fab fa-whatsapp"></i>
+              </a>
+            </div>
+
+            {/* أزرار تغيير اللغة */}
             <div
               className="d-flex bg-dark p-1"
-              style={{ borderRadius: "25px", border: "1px solid #fc8b1a" }}
+              style={{ borderRadius: "20px", border: "1px solid #fc8b1a" }}
             >
               <Button
                 variant={i18n.language === "ar" ? "warning" : "outline-light"}
                 size="sm"
                 onClick={() => handleLangChange("ar")}
-                className="fw-bold border-0"
+                className="fw-bold border-0 lang-btn"
                 style={{
-                  borderRadius: "20px",
+                  borderRadius: "15px",
                   fontSize: "0.75rem",
                   minWidth: "55px",
                 }}
@@ -84,35 +114,15 @@ export const NavBar = () => {
                 variant={i18n.language === "en" ? "warning" : "outline-light"}
                 size="sm"
                 onClick={() => handleLangChange("en")}
-                className="fw-bold border-0"
+                className="fw-bold border-0 lang-btn"
                 style={{
-                  borderRadius: "20px",
+                  borderRadius: "15px",
                   fontSize: "0.75rem",
                   minWidth: "55px",
                 }}
               >
                 EN
               </Button>
-            </div>
-
-            <div className="social-links-container d-flex align-items-center ms-lg-3">
-              <a href="tel:+96590930061" className="social-icon phone mx-2">
-                <i className="fas fa-phone"></i>
-              </a>
-              <div className="separator"></div>
-              <a
-                href="https://www.instagram.com/wahajcar2/?igsh=MWJrYnk3dXR1dXl2NQ%3D%3D#"
-                className="social-icon instagram mx-2"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
-              <div className="separator"></div>
-              <a
-                href="https://wa.me/+96590930061"
-                className="social-icon whatsapp mx-2"
-              >
-                <i className="fab fa-whatsapp"></i>
-              </a>
             </div>
           </div>
         </Navbar.Collapse>

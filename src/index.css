@@ -75,16 +75,6 @@ img {
   background-color: #ccc;
 }
 
-.whatsapp i:hover {
-  color: #25d366 !important;
-}
-.instagram i:hover {
-  color: #e1306c !important;
-}
-.phone i:hover {
-  color: #007bff !important;
-}
-
 .navBar {
   background-color: var(--main-color);
   position: fixed;
@@ -116,11 +106,83 @@ img {
 }
 @media (max-width: 992px) {
   /* For mobile view */
-  .navBar img {
-    display: flex;
-    margin: auto;
-    padding: 10px 0px;
+  .navBar {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    min-height: auto !important;
   }
+
+  .navBar img {
+    height: 70px; /* صغر الرقم ده لو عايز الناف بار يصغر أكتر */
+    width: auto;
+    display: block; /* أفضل من flex للوجو المفرد */
+    margin: 5px auto; /* 5px بس عشان ميبقاش لازق في الحواف */
+    padding: 0; /* شيلنا الـ padding القديم */
+  }
+
+  /* تصغير زرار المنيو عشان ميزقش الطول */
+  .navbar-toggler {
+    padding: 3px 6px !important;
+    font-size: 1.4rem !important;
+    margin-bottom: 5px;
+  }
+}
+
+/* التنسيق الأساسي للأيقونة */
+.nav-social-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%; /* لجعلها دائرية تماماً */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  color: #ffffff !important; /* لون الأيقونة أبيض دائماً */
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* حركة مرنة */
+  position: relative;
+  overflow: hidden;
+}
+
+/* الألوان الخاصة بكل أيقونة (نفس الفوتر) */
+.phone-icon {
+  background-color: #fc8b1a;
+}
+.instagram-icon {
+  background-color: #e1306c;
+}
+.whatsapp-icon {
+  background-color: #25d366;
+}
+
+/* تأثير الـ Hover المظبوط */
+.nav-social-icon:hover {
+  transform: translateY(-5px) scale(1.1); /* تترفع لفوق وتكبر بسيط */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* ظل تحتها بيدي عمق */
+  color: #ffffff !important;
+  filter: brightness(1.1); /* تفتيح بسيط للون الأصلي */
+}
+
+/* إضافة لمعة بسيطة عند الـ Hover */
+.nav-social-icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.nav-social-icon:hover::after {
+  left: 100%;
 }
 
 /* End navBar */
