@@ -40,7 +40,6 @@ img {
 }
 /* start navBar */
 
-/* 1. الحاوية: لضمان الترتيب الأفقي */
 .social-links-container {
   display: flex;
   align-items: end;
@@ -48,7 +47,6 @@ img {
   padding: 10px 0;
 }
 
-/* 2. الأيقونات (الألوان الأساسية) */
 .social-icon {
   font-size: 25px;
   text-decoration: none;
@@ -57,7 +55,6 @@ img {
   align-items: center;
 }
 
-/* الألوان الأساسية الخاصة بكل أيقونة */
 .whatsapp {
   color: #25d366;
 }
@@ -68,7 +65,6 @@ img {
   color: #007bff;
 }
 
-/* 3. الخط الفاصل */
 .separator {
   width: 1px;
   height: 20px;
@@ -113,14 +109,13 @@ img {
   }
 
   .navBar img {
-    height: 70px; /* صغر الرقم ده لو عايز الناف بار يصغر أكتر */
+    height: 70px;
     width: auto;
-    display: block; /* أفضل من flex للوجو المفرد */
-    margin: 5px auto; /* 5px بس عشان ميبقاش لازق في الحواف */
-    padding: 0; /* شيلنا الـ padding القديم */
+    display: block;
+    margin: 5px auto;
+    padding: 0;
   }
 
-  /* تصغير زرار المنيو عشان ميزقش الطول */
   .navbar-toggler {
     padding: 3px 6px !important;
     font-size: 1.4rem !important;
@@ -128,16 +123,15 @@ img {
   }
 }
 
-/* التنسيق الأساسي للأيقونة */
 .nav-social-icon {
   width: 35px;
   height: 35px;
-  border-radius: 50%; /* لجعلها دائرية تماماً */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 5px;
-  color: #ffffff !important; /* لون الأيقونة أبيض دائماً */
+  color: #ffffff !important;
   font-size: 1.1rem;
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* حركة مرنة */
@@ -358,135 +352,201 @@ img {
 /* End services */
 
 /* start BusinessSolutions  */
+/* start BusinessSolutions */
 .businessSolutions {
-  background-image: url(/public/040920231046546432979ea8f93.jpg);
+  /* مسار الصورة - تأكد من صحة المسار */
+  background-image:
+    linear-gradient(rgba(33, 39, 65, 0.7), rgba(33, 39, 65, 0.7)),
+    url(/public/040920231046546432979ea8f93.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: scroll; /* أفضل للأداء على الموبايل من fixed */
   padding: 100px 0;
   width: 100%;
   margin: 50px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
+
 .businessSolutions h4 {
   color: white;
-  font-size: 30px;
+  font-size: clamp(1.5rem, 5vw, 2.5rem); /* حجم خط متجاوب آلياً */
   font-weight: bold;
   text-transform: uppercase;
+  line-height: 1.5;
+  z-index: 2;
 }
+
 .businessSolutions span {
-  color: var(--scond-color);
+  color: #fc8b1a; /* اللون البرتقالي الخاص بك */
 }
-.BusinessSolutions .greens {
-  color: var(--thired-color);
-}
+
+/* --- التنسيق الخاص بالموبايل والتابلت --- */
 @media (max-width: 992px) {
+  .businessSolutions {
+    /* تغيير موضع الصورة في الموبايل لتركز على أهم جزء (السيارة مثلاً) */
+    background-position: 70% center;
+    padding: 60px 0; /* تقليل الحشو ليتناسب مع حجم الشاشة */
+    margin: 30px 0;
+  }
+
+  .businessSolutions h4 {
+    text-align: center !important; /* توسيط النص في الموبايل لمظهر أجمل */
+    width: 100%;
+  }
+
   .businessSolutions .Container {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .businessSolutions {
+    background-position: center; /* إعادة التوسط للموبايلات الصغيرة جداً */
+    padding: 50px 15px;
+  }
+}
+
+/* end BusinessSolutions */
+/* --- الإعدادات العامة للقسم --- */
+.AboutUS {
+  overflow-x: hidden;
+  padding: 60px 0;
+  background-color: #fdfdfd;
+}
+
+/* إحصائيات الشركة */
+.stat-item {
+  padding: 10px 20px;
+}
+
+.stat-item h4 {
+  font-size: 1.8rem;
+}
+
+/* --- حاوي الصورة (Image Container) --- */
+.image-container {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #fff; /* خلفية بيضاء لملء الفراغات إن وجدت */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-about-img {
+  width: 100%;
+  height: auto; /* يجعل الارتفاع مرن */
+  border-radius: 20px;
+  object-fit: contain; /* يضمن ظهور الصورة كاملة 100% دون قص */
+  transition: transform 0.3s ease;
+}
+
+/* اللمسة الديكورية خلف الصورة */
+.image-container::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 5px solid #fc8b1a;
+  border-radius: 15px;
+  z-index: -1;
+  display: block; /* تظهر افتراضياً في الشاشات الكبيرة */
+}
+
+/* --- محتوى النصوص --- */
+.section-content h3 {
+  color: #212741;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.detail-text {
+  color: #6c757d;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* --- الزر --- */
+.book-btn {
+  background-color: #fc8b1a !important;
+  color: #fff !important;
+  transition: all 0.3s ease-in-out !important;
+  border: none !important;
+}
+
+.book-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(252, 139, 26, 0.3) !important;
+  background-color: #e57a15 !important;
+}
+
+/* --- التجاوب مع الموبايل (Responsive) --- */
+
+@media (max-width: 991px) {
+  .AboutUS {
+    padding: 40px 0;
+  }
+
+  /* جعل الترتيب: صورة ثم نص تحتها دائماً في الموبايل */
+  .row.flex-row-reverse {
+    flex-direction: column !important;
+  }
+
+  .AboutUS .row {
     flex-direction: column !important;
     text-align: center;
   }
-  .businessSolutions .buttons {
-    margin-top: 40px;
+
+  .image-container {
+    margin-bottom: 20px;
+    aspect-ratio: auto; /* إلغاء تقييد الأبعاد ليظهر الطول الحقيقي للصورة */
   }
-}
-/* end BusinessSolutions */
 
-/* Start AboutUs */
-.AboutUS {
-  text-align: center;
-  margin-bottom: 50px;
-}
-.AboutUS h6 {
-  color: var(--scond-color);
-  font-weight: bold;
-  font-size: 25px;
-}
-.AboutUS h2 {
-  color: var(--main-color) !important;
-  font-weight: bold;
-}
-
-.AboutUS .texts {
-  margin-top: 20px;
-  margin-bottom: 50px;
-}
-.content {
-  margin-top: 50px;
-}
-
-.rightText h4 {
-  font-weight: bold;
-  margin-bottom: 40px !important;
-}
-.rightText p span {
-  font-weight: 700;
-  margin-bottom: 40px !important;
-  letter-spacing: 1px;
-  color: var(--scond-color);
-}
-.rightText p {
-  margin-bottom: 40px !important;
-  letter-spacing: 1px;
-  font-size: 18px;
-}
-@media (max-width: 992px) {
-  .content .rightText {
-    margin-top: 50px;
-    text-align: center;
+  .main-about-img {
+    max-height: 350px; /* تحديد أقصى ارتفاع لعدم أخذ مساحة ضخمة */
+    object-fit: contain; /* التأكيد على ظهور الصورة كاملة */
+    box-shadow: none !important; /* تخفيف الظلال للموبايل */
   }
-}
-.AboutUS .leftText {
-  text-align: left;
-}
-.AboutUS .leftText .tabss {
-  display: flex;
-  gap: 30px;
-}
-.AboutUS .leftText .tabss Button {
-  font-weight: bold;
-  font-size: 20px;
-  background-color: #ffffff;
-  color: black;
-  box-shadow:
-    rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  border-radius: 5px;
-  border: none;
-  padding: 10px 20px;
-}
-.AboutUS .leftText .tabss Button.active {
-  color: var(--scond-color) !important;
-}
 
-.AboutUS table {
-  width: 90%;
-}
-.AboutUS .TableContent {
-  margin-top: 30px !important;
-}
-.AboutUS table thead th {
-  color: var(--main-color);
-  font-size: large;
-  font-weight: bold;
-}
-.AboutUS table tbody tr:not(:last-child) {
-  border-bottom: 1px solid var(--scond-color) !important;
-}
-.AboutUS table tbody td {
-  font-size: large;
-  font-weight: 400;
-  padding: 20px 0px;
-}
-.AboutUS table tbody td:first-child {
-  font-weight: 700;
-  color: var(--thired-color);
-}
+  /* إخفاء المربع الديكوري في الموبايل لتجنب التداخل مع الصورة */
+  .image-container div.position-absolute {
+    display: none !important;
+  }
 
-@media (max-width: 992px) {
-  .AboutUS .leftText .tabss {
-    flex-direction: column;
+  .section-content {
+    padding: 0 10px;
+  }
+
+  .section-content h3 {
+    font-size: 1.4rem;
+    margin-top: 10px;
+  }
+
+  .stat-item {
+    border-start: none !important; /* إزالة الخطوط الجانبية في الموبايل */
+    border-bottom: 1px solid #eee;
+    width: 45%;
+    margin-bottom: 10px;
   }
 }
 
+@media (max-width: 576px) {
+  .main-about-img {
+    max-height: 280px; /* ارتفاع أصغر قليلاً للموبايلات الصغيرة جداً */
+  }
+
+  .stat-item {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+  }
+}
 /* End AboutUs */
 /* start Testimonials */
 .Testimonials {

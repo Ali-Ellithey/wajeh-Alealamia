@@ -15,10 +15,16 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
 // استيراد الصور (تأكد من صحة المسارات)
-import imgs from "/public/غلاف.png";
-import imgs2 from "/public/رياضية-1.png";
-import imgs3 from "/public/فارهة.png";
-import imgs4 from "/public/رياضية-1.png";
+import imgs0 from "/public/غلاف.png";
+import imgs1 from "/public/رياضية-1.png";
+import imgs2 from "/public/رياضية-2.png";
+import imgs3 from "/public/رياضية-3.png";
+import imgs4 from "/public/فارهة.png";
+import imgs5 from "/public/اقتصادية.png";
+import imgs6 from "/public/اقتصادية2.png";
+import imgs7 from "/public/اقتصادية3.png";
+import imgs8 from "/public/كبير.png";
+import imgs9 from "/public/كبير2.png";
 
 export const Services = () => {
   const { t } = useTranslation();
@@ -31,22 +37,22 @@ export const Services = () => {
   const fleetData = [
     {
       key: "luxury",
-      images: [imgs, imgs2, imgs3], // أضف هنا صور كل قسم
+      images: [imgs0, imgs4, imgs4], // أضف هنا صور كل قسم
       path: "/luxury-cars-details",
     },
     {
       key: "suv",
-      images: [imgs2, imgs4, imgs],
+      images: [imgs1, imgs2, imgs3],
       path: "/suv-cars-details",
     },
     {
       key: "family",
-      images: [imgs4, imgs3, imgs2],
+      images: [imgs8, imgs9, imgs8],
       path: "/family-cars-details",
     },
     {
       key: "economy",
-      images: [imgs3, imgs, imgs4],
+      images: [imgs5, imgs6, imgs7],
       path: "/economy-cars-details",
     },
   ];

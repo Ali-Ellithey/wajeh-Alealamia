@@ -10,12 +10,13 @@ import imgSlider2 from "/public/فارهة.png";
 import imgSlider3 from "/public/رياضية-1.png";
 
 export const HomeSidler = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
+  // تأكد أن الـ key هنا يطابق تماماً ما هو موجود في i18n.js
   const slides = [
-    { img: imgSlider1, titleKey: "slide1", desc: t("slider.slide1.desc") },
-    { img: imgSlider2, titleKey: "slide2", desc: t("slider.slide2.desc") },
-    { img: imgSlider3, titleKey: "slide3", desc: t("slider.slide3.desc") },
+    { img: imgSlider1, key: "slide1" },
+    { img: imgSlider2, key: "slide2" },
+    { img: imgSlider3, key: "slide3" },
   ];
 
   const brands = [
@@ -100,19 +101,21 @@ export const HomeSidler = () => {
                   transition={{ duration: 0.8 }}
                   className="fw-bold slider-title"
                 >
-                  {t(`slider.${item.titleKey}.title_part1`)}{" "}
+                  {/* تأكد من وجود slider.slide1.title_part1 في ملف i18n */}
+                  {t(`slider.${item.key}.title_part1`)}{" "}
                   <span style={{ color: "#fc8b1a" }}>
-                    {t(`slider.${item.titleKey}.title_span`)}
+                    {t(`slider.${item.key}.title_span`)}
                   </span>{" "}
-                  {t(`slider.${item.titleKey}.title_part2`)}
+                  {t(`slider.${item.key}.title_part2`)}
                 </motion.h1>
+
                 <motion.p
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="d-none d-md-block fs-5"
                 >
-                  {item.desc}
+                  {t(`slider.${item.key}.desc`)}
                 </motion.p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -120,7 +123,7 @@ export const HomeSidler = () => {
         </Carousel>
       </Fade>
 
-      {/* 🏎️ Brands Logo Slider - الجزء الذي تم تعديله */}
+      {/* 🏎️ Brands Logo Slider */}
       <section className="bg-white py-5 border-bottom overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -139,7 +142,6 @@ export const HomeSidler = () => {
           </div>
         </motion.div>
 
-        {/* تعديل هائل هنا: إضافة direction: ltr لضمان عمل السلايدر في العربي */}
         <div
           className="d-flex overflow-hidden position-relative pt-1"
           style={{ direction: "ltr" }}
@@ -169,10 +171,6 @@ export const HomeSidler = () => {
                   src={brand.logo}
                   alt={brand.name}
                   className="brand-logo-img"
-                  onMouseOver={(e) =>
-                    (e.target.style.transform = "scale(1.25)")
-                  }
-                  onMouseOut={(e) => (e.target.style.transform = "scale(1)")}
                 />
               </div>
             ))}
@@ -181,40 +179,15 @@ export const HomeSidler = () => {
       </section>
 
       <style>{`
-        .brand-main-title {
-          font-size: 2.4rem;
-          color: #1a1a1a;
-          position: relative;
-        }
-        .title-separator {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 12px;
-          width: 250px;
-        }
-        .title-separator .line {
-          height: 2px;
-          background: linear-gradient(to right, transparent, #fc8b1a, transparent);
-          flex-grow: 1;
-        }
-        .title-separator .dot {
-          width: 8px;
-          height: 8px;
-          background-color: #fc8b1a;
-          border-radius: 50%;
-        }
-        .brand-logo-img {
-          width: 100%;
-          height: 75px;
-          object-fit: contain;
-          transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          cursor: pointer;
-        }
+        .brand-main-title { font-size: 2.4rem; color: #1a1a1a; }
+        .title-separator { display: flex; align-items: center; justify-content: center; gap: 12px; width: 250px; }
+        .title-separator .line { height: 2px; background: linear-gradient(to right, transparent, #fc8b1a, transparent); flex-grow: 1; }
+        .title-separator .dot { width: 8px; height: 8px; background-color: #fc8b1a; border-radius: 50%; }
+        .brand-logo-img { width: 100%; height: 75px; object-fit: contain; transition: transform 0.4s; cursor: pointer; }
+        .brand-logo-img:hover { transform: scale(1.2); }
         @media (max-width: 767px) {
-          .brand-main-title { font-size: 1.5rem; padding: 0 10px; }
+          .brand-main-title { font-size: 1.5rem; }
           .brand-logo-img { height: 50px; }
-          .title-separator { width: 180px; }
         }
       `}</style>
     </div>
