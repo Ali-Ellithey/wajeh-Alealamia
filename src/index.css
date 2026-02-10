@@ -779,11 +779,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: center; /* لضمان توسيط المحتوى عمودياً */
-  padding: 100px 0px;
+  padding: 80px 0px;
   text-align: center;
   flex-direction: column;
 
-  /* إذا أردت أن يكون النص أبيض ليظهر بوضوح فوق الظل */
   color: white;
 }
 
@@ -800,7 +799,7 @@ img {
   margin: 0px 0px;
 }
 .allItems {
-  margin: 100px 0px;
+  margin: 50px 0px;
 }
 
 .textContent i {

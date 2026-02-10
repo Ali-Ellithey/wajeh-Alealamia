@@ -1,20 +1,19 @@
-import React, { useMemo } from "react"; // أضفنا useMemo
+import React, { useMemo } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-// استيراد الصور
-import luxuryImg from "/public/فارهة.png";
-import suvImg from "/public/رياضية-1.png";
-import airportImg from "/public/aitbotr.jpg";
-import vipImg from "/public/بسائق.jpg";
-import familyImg from "/public/كبير.png";
-import economyImg from "/public/اقتصادية.png";
+// --- تصحيح المسارات: حذف كلمة /public/ لتعمل الصور بعد الرفع ---
+import luxuryImg from "/فارهة.png";
+import suvImg from "/رياضية-1.png";
+import airportImg from "/aitbotr.jpg";
+import vipImg from "/بسائق.jpg";
+import familyImg from "/كبير.png";
+import economyImg from "/اقتصادية.png";
 
 export const AboutUS = () => {
   const { t, i18n } = useTranslation();
 
-  // 1. استخدام useMemo لمنع إعادة إنشاء المصفوفة عند كل ريندر (لتحسين الأداء)
   const sections = useMemo(
     () => [
       {
@@ -140,7 +139,7 @@ export const AboutUS = () => {
           const isEven = index % 2 === 0;
           return (
             <div key={section.id} className="section-wrapper mb-5 py-2 py-md-4">
-              {/* 2. تعديل flex-row-reverse ليعمل فقط في الشاشات الكبيرة (lg) */}
+              {/* تعديل flex-lg-row-reverse ليعمل فقط في الشاشات الكبيرة */}
               <Row
                 className={`align-items-center g-4 g-md-5 ${!isEven ? "flex-lg-row-reverse" : ""}`}
               >
@@ -156,13 +155,13 @@ export const AboutUS = () => {
                       <img
                         src={section.image}
                         alt={section.title}
-                        className="main-about-img img-fluid shadow-lg"
+                        className="main-about-img img-fluid shadow-sm"
                         style={{
                           borderRadius: "20px",
                           width: "100%",
                           height: "auto",
-                          // 3. تغيير objectFit إلى contain لضمان ظهور السيارة كاملة دون قص في الموبايل
-                          objectFit: "contain",
+                          maxHeight: "400px", // لمنع الصور الطويلة جداً من تشويه التصميم
+                          objectFit: "contain", // يضمن ظهور السيارة كاملة
                           backgroundColor: "#fff",
                         }}
                       />

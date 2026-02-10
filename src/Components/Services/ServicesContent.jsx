@@ -2,7 +2,7 @@ import React from "react";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/Col";
-import ImageServices from "../../Images/rent.png";
+import ImageServices from "/public/غلاف.PNG";
 import ServicesImage from "../../Images/servies.jpg";
 import imegEnd from "../../Images/leading2.8d9acc49266851480fe6.jpg";
 import { Zoom } from "react-awesome-reveal";
@@ -12,10 +12,9 @@ export const ServicesContent = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="ServicesContent py-5">
+    <div className="ServicesContent py-3">
       <Container>
-        {/* 🚗 الخدمة الأولى: تأجير السيارات */}
-        <div className="allItems mb-5">
+        <div className="allItems mb-2">
           <Zoom>
             <Row className="align-items-center">
               <Col lg={6}>
