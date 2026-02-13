@@ -7,7 +7,6 @@ export default defineConfig({
   plugins: [react()],
 
   build: {
-    // هذا المجلد هو الذي سيقرأ منه GitHub Pages
     outDir: 'docs',
     chunkSizeWarningLimit: 1600,
   },

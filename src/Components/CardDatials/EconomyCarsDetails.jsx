@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"; // إزالة الاستيراد المكرر لـ React
+import React, { useEffect } from "react";
 import {
   Container,
   Row,
@@ -19,12 +19,8 @@ import {
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
-// 1. استيراد السلايدر (تأكد من صحة المسار)
+// 1. استيراد السلايدر
 import HomeSidler from "../Home/HomeSidler";
-
-// استيراد صور الكروت
-import img1 from "/public/BagCar2.png";
-import img2 from "/public/BagCar2.png";
 
 const EconomyCarsDetails = () => {
   const { t } = useTranslation();
@@ -33,41 +29,137 @@ const EconomyCarsDetails = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const luxuryCars = [
+  // مصفوفة السيارات الاقتصادية والمتنوعة
+  const economyCars = [
     {
       id: 1,
-      name: "بنتلي بينتايجا",
-      images: [
-        { src: img1, year: "2024" },
-        { src: img2, year: "2023" },
-      ],
-      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V12" },
-      features: ["تكييف خلفي", "مقاعد جلد", "نظام صوتي", "شاشات خلفية"],
+      name: "Tyota Yaris",
+      images: [{ src: "EconomyCars/ToyotaYaris2022.png", year: "2022" }],
+      specs: { passengers: 5, transmission: "CVT", engine: "1.5L" },
+      features: ["اقتصادية جداً", "سهلة القيادة", "بلوتوث"],
       rentalOptions: { minAge: 21 },
-      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز بنتلي بينتايجا",
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز تويوتا يارس",
     },
     {
       id: 2,
-      name: "مرسيدس مايباخ",
-      images: [
-        { src: img1, year: "2024" },
-        { src: img2, year: "2022" },
-      ],
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "V8" },
-      features: ["تكييف خلفي", "مقاعد جلد", "نظام صوتي", "شاشات خلفية"],
+      name: "Toyota Urban",
+      images: [{ src: "EconomyCars/ToyotaUrban.png", year: "2024" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.5L" },
+      features: ["دفع أمامي", "توفير وقود", "تصميم عصري"],
       rentalOptions: { minAge: 21 },
-      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز مرسيدس مايباخ",
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز تويوتا أوربان",
+    },
+    {
+      id: 3,
+      name: "Toyota Rise",
+      images: [{ src: "EconomyCars/ToyotaRise.png", year: "2024" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "1.2L" },
+      features: ["SUV صغيرة", "مرونة عالية", "مثالية للمدينة"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز تويوتا رايز",
+    },
+    {
+      id: 4,
+      name: "Toyota Cross",
+      images: [{ src: "EconomyCars/ToyotaCross2024.png", year: "2024" }],
+      specs: { passengers: 5, transmission: "Hybrid", engine: "1.8L" },
+      features: ["هجينة", "مساحة واسعة", "شاشة متطورة"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز تويوتا كروس 2024",
+    },
+    {
+      id: 5,
+      name: "Toyota Camry",
+      images: [{ src: "EconomyCars/ToyotaCamry2026.png", year: "2026" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "2.5L" },
+      features: ["أحدث موديل", "راحة فائقة", "تقنيات سلامة"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink:
+        "https://wa.me/+96590930061?text=أريد حجز تويوتا كامري 2026",
+    },
+    {
+      id: 6,
+      name: "Mercedes C200",
+      images: [{ src: "EconomyCars/MercedesC200.png", year: "2024" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "2.0L Turbo" },
+      features: ["فخامة", "أداء رياضي", "إضاءة محيطية"],
+      rentalOptions: { minAge: 25 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز مرسيدس C200",
+    },
+    {
+      id: 7,
+      name: "Lexus ES 250",
+      images: [{ src: "EconomyCars/Lexus250ES.png", year: "2024" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "2.5L" },
+      features: ["هدوء تام", "فخامة لكزس", "مقاعد جلد"],
+      rentalOptions: { minAge: 25 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز لكزس ES",
+    },
+    {
+      id: 8,
+      name: "kia Sportage",
+      images: [{ src: "EconomyCars/KiaSportage2026.png", year: "2026" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "2.0L" },
+      features: ["تصميم مستقبلي", "بانوراما", "واسعة"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز كيا سبورتاج",
+    },
+    {
+      id: 9,
+      name: "Hyundai Tucson",
+      images: [{ src: "EconomyCars/HyundaiTucson26.png", year: "2026" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "2.0L" },
+      features: ["ثبات مميز", "كاميرا خلفية", "شاشة"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز هيونداي توسان",
+    },
+    {
+      id: 10,
+      name: "BMW X2",
+      images: [{ src: "EconomyCars/BMWX2.png", year: "2024" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "Turbo" },
+      features: ["SUV رياضية", "تجربة قيادة فريدة", "براند عالمي"],
+      rentalOptions: { minAge: 25 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز بي إم دبليو X2",
+    },
+    {
+      id: 11,
+      name: "Dodge Charger",
+      images: [{ src: "EconomyCars/DodgeCharger.png", year: "2023" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6" },
+      features: ["قوة عضلات", "مظهر هجومي", "نظام صوتي"],
+      rentalOptions: { minAge: 25 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز دوج تشارجر",
+    },
+    {
+      id: 12,
+      name: "Geely Coolray 2025",
+      images: [{ src: "EconomyCars/GeelyCoolray2025.png", year: "2025" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "Turbo" },
+      features: ["تقنيات ذكية", "تسارع سريع", "تصميم شبابي"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز جيلي كولراي",
     },
   ];
 
   return (
     <>
-      {/* استدعاء السلايدر الموحد */}
       <HomeSidler />
-
+      <div className="section-header text-center my-5">
+        <Container>
+          <h2 className="display-5 fw-bold section-title">
+            السيارات الاقتصادية
+          </h2>
+          <div className="title-underline mx-auto"></div>
+          <p className="text-muted mt-3 fs-5">
+            مجموعة واسعة من السيارات العملية والموفرة للوقود لتناسب احتياجاتك
+            اليومية
+          </p>
+        </Container>
+      </div>
       <Container className="my-5" dir="rtl">
         <Row className="gx-4 gy-4">
-          {luxuryCars.map((car) => (
+          {economyCars.map((car) => (
             <Col key={car.id} xs={12} lg={6}>
               <Card className="shadow-sm border-0 h-100 overflow-hidden car-card">
                 <Carousel interval={null} indicators={true}>
@@ -79,7 +171,7 @@ const EconomyCarsDetails = () => {
                         </Badge>
                         <img
                           className="d-block w-100 card-car-img"
-                          src={imgObj.src}
+                          src={`${import.meta.env.BASE_URL}${imgObj.src}`}
                           alt={car.name}
                         />
                       </div>
@@ -122,7 +214,6 @@ const EconomyCarsDetails = () => {
                     </Col>
                   </Row>
 
-                  {/* قائمة المميزات - تم نقلها داخل الـ Card.Body لتعمل بشكل صحيح */}
                   <div className="features-list d-flex flex-wrap justify-content-center gap-2 mb-3">
                     {car.features.map((feature, fIndex) => (
                       <Badge
@@ -138,7 +229,6 @@ const EconomyCarsDetails = () => {
                     ))}
                   </div>
 
-                  {/* نظام الإيجار - داخل الـ Card.Body */}
                   <div
                     className="rental-info-box mb-3 p-2 border rounded shadow-sm bg-white"
                     style={{ borderStyle: "dashed" }}
@@ -180,7 +270,7 @@ const EconomyCarsDetails = () => {
 
       <style>{`
         .card-img-container { aspect-ratio: 16 / 9; background-color: #f8f9fa; }
-        .card-car-img { width: 100%; height: 100%; object-fit: contain;  }
+        .card-car-img { width: 100%; height: 100%; object-fit: contain; }
         .year-badge { position: absolute; top: 15px; right: 15px; background-color: #fc8b1a; z-index: 10; padding: 8px 15px; }
         .whatsapp-btn { border-radius: 12px; font-weight: bold; background-color: #28a745; border: none; display: flex; align-items: center; justify-content: center; padding: 12px; transition: 0.3s; }
         .whatsapp-btn:hover { background-color: #218838; transform: scale(1.02); }

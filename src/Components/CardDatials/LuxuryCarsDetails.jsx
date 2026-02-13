@@ -155,7 +155,15 @@ const LuxuryCarsDetails = () => {
   return (
     <>
       <HomeSidler />
-
+      <div className="section-header text-center my-5">
+        <Container>
+          <h2 className="display-5 fw-bold section-title">السيارات الفارهة</h2>
+          <div className="title-underline mx-auto"></div>
+          <p className="text-muted mt-3 fs-5">
+            تجربة قيادة استثنائية مع أفخم الماركات العالمية المصممة لرفاهيتك
+          </p>
+        </Container>
+      </div>
       <Container className="my-5" dir="rtl">
         <Row className="gx-4 gy-4">
           {luxuryCars.map((car) => (

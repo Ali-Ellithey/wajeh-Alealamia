@@ -107,12 +107,41 @@ const SuvCarsDetails = () => {
       rentalOptions: { minAge: 21 },
       whatsappLink: "https://wa.me/+96590930061?text=أريد حجز فيات 500C",
     },
+    {
+      id: 9, // تأكد من أن المعرف فريد
+      name: "Slingshot R",
+      images: [{ src: "SportsCars/SlingshotR.png", year: "2024" }],
+      specs: {
+        passengers: 2,
+        transmission: "Auto-Drive",
+        engine: "2.0L 4-Cyl",
+      },
+      features: [
+        "ثلاث عجلات",
+        "تجربة قيادة فريدة",
+        "نظام صوتي مميز",
+        "مكشوفة بالكامل",
+      ],
+      rentalOptions: { minAge: 25 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز Slingshot R",
+    },
   ];
 
   return (
     <>
       <HomeSidler />
-
+      <div className="section-header text-center my-5">
+        <Container>
+          <h2 className="display-5 fw-bold section-title">
+            السيارات الرياضية والخاصة
+          </h2>
+          <div className="title-underline mx-auto"></div>
+          <p className="text-muted mt-3 fs-5">
+            انطلق بقوة مع مجموعتنا المختارة من السيارات الرياضية والسيارات ذات
+            الأداء المتميز
+          </p>
+        </Container>
+      </div>
       <Container className="my-5" dir="rtl">
         <Row className="gx-4 gy-4">
           {suvCars.map((car) => (
