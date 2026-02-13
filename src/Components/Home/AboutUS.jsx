@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 // --- تصحيح المسارات: حذف كلمة /public/ لتعمل الصور بعد الرفع ---
-import luxuryImg from "/فارهة.png";
-import suvImg from "/رياضية-1.png";
+import luxuryImg from "/Lux.png";
+import suvImg from "/sport1.png";
 import airportImg from "/aitbotr.jpg";
-import vipImg from "/بسائق.jpg";
-import familyImg from "/كبير.png";
-import economyImg from "/اقتصادية.png";
+import vipImg from "/Driver.jpg";
+import familyImg from "/BagCar.png";
+import economyImg from "/Suv.png";
 
 export const AboutUS = () => {
   const { t, i18n } = useTranslation();

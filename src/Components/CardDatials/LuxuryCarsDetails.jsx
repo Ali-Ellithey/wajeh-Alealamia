@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"; // إزالة الاستيراد المكرر لـ React
+import React, { useEffect } from "react";
 import {
   Container,
   Row,
@@ -19,12 +19,8 @@ import {
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
-// 1. استيراد السلايدر (تأكد من صحة المسار)
+// 1. استيراد السلايدر
 import HomeSidler from "../Home/HomeSidler";
-
-// استيراد صور الكروت
-import img1 from "../../img_car/سعر-سيارة-بنتلي-بينتايجا-جديدة-.jpg";
-import img2 from "../../img_car/5f0d5229e9c27Ford_Bronco_4_door_2021_front_dubai_uae.jpg";
 
 const LuxuryCarsDetails = () => {
   const { t } = useTranslation();
@@ -33,36 +29,131 @@ const LuxuryCarsDetails = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // المصفوفة المدمجة بأسماء الملفات الجديدة
   const luxuryCars = [
     {
       id: 1,
-      name: "بنتلي بينتايجا",
-      images: [
-        { src: img1, year: "2024" },
-        { src: img2, year: "2023" },
-      ],
+      name: "Rolls-Royce Cullinan",
+      images: [{ src: "LuxCars/Rolls-RoyceCullinan.png", year: "2023" }],
       specs: { passengers: 5, transmission: "أتوماتيك", engine: "V12" },
-      features: ["تكييف خلفي", "مقاعد جلد", "نظام صوتي", "شاشات خلفية"],
-      rentalOptions: { minAge: 21 },
-      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز بنتلي بينتايجا",
+      features: ["فخامة مطلقة", "مقاعد مساج", "نظام رؤية ليلية", "سقف نجوم"],
+      rentalOptions: { minAge: 25 },
+      whatsappLink:
+        "https://wa.me/+96590930061?text=أريد حجز رولز رويس كولينان",
     },
     {
       id: 2,
-      name: "مرسيدس مايباخ",
-      images: [
-        { src: img1, year: "2024" },
-        { src: img2, year: "2022" },
-      ],
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "V8" },
-      features: ["تكييف خلفي", "مقاعد جلد", "نظام صوتي", "شاشات خلفية"],
+      name: "Range Rover Vogue",
+      images: [{ src: "LuxCars/RangeRoverVogue24.png", year: "2024" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V8" },
+      features: ["ثلاجة", "مقاعد كهربائية", "نظام صوتي ميريديان", "فتحة سقف"],
       rentalOptions: { minAge: 21 },
-      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز مرسيدس مايباخ",
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز رينج روفر فوج",
+    },
+    {
+      id: 3,
+      name: "Mercedes G-Class 500",
+      images: [{ src: "LuxCars/G-Class500.png", year: "2022" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V8 Biturbo" },
+      features: [
+        "دفع رباعي",
+        "شاشات ديجيتال",
+        "إضاءة محيطية",
+        "نظام عادم رياضي",
+      ],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز مرسيدس جي كلاس",
+    },
+    {
+      id: 4,
+      name: "Lexus LX 600",
+      images: [{ src: "LuxCars/LexusLX600.png", year: "2025" }],
+      specs: { passengers: 7, transmission: "أتوماتيك", engine: "V6 Turbo" },
+      features: ["نظام زحف", "تكييف مركزي", "شاشات خلفية", "ثلاجة"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز لكزس LX600",
+    },
+    {
+      id: 5,
+      name: "Cadillac Escalade 600",
+      images: [{ src: "LuxCars/CadillacEscalade600.png", year: "2025" }],
+      specs: { passengers: 7, transmission: "أتوماتيك", engine: "V8" },
+      features: ["نظام صوتي AKG", "شاشة OLED منحنية", "سعة تخزين ضخمة"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز كاديلاك اسكاليد",
+    },
+    {
+      id: 6,
+      name: "BMW 740",
+      images: [{ src: "LuxCars/BMW740.png", year: "2025" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "TwinPower" },
+      features: ["شاشة سينما خلفية", "تحكم باللمس", "ركن ذاتي"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز بي إم دبليو 740",
+    },
+    {
+      id: 7,
+      name: "Range Rover Sport",
+      images: [{ src: "LuxCars/RangeRoverSportR.png", year: "2023" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V8 Dynamic" },
+      features: ["ثبات عالي", "تصميم رياضي", "كاميرات 360", "هيدروليك"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز رينج روفر سبورت",
+    },
+    {
+      id: 8,
+      name: "Land Rover Defender",
+      images: [{ src: "LuxCars/LandRoverDefenderW.png", year: "2023" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "P400" },
+      features: ["قدرات وعرة", "تصميم عصري", "دفع رباعي مستمر"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز ديفندر أبيض",
+    },
+    {
+      id: 9,
+      name: "Land Rover Defender",
+      images: [{ src: "LuxCars/LandRoverDefenderG.png", year: "2025" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6" },
+      features: ["إطارات جبلية", "كاميرا مرايا", "حزمة الطرق الوعرة"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز ديفندر رمادي",
+    },
+    {
+      id: 10,
+      name: "BMW M Power",
+      images: [{ src: "LuxCars/BMWMPower.png", year: "2025" }],
+      specs: { passengers: 4, transmission: "أتوماتيك", engine: "M Sport" },
+      features: ["تسارع رهيب", "كراسي رياضية", "فرامل كربون"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink:
+        "https://wa.me/+96590930061?text=أريد حجز بي إم دبليو M Power",
+    },
+    {
+      id: 11,
+      name: "Ford Bronco",
+      images: [{ src: "LuxCars/FordBronco.png", year: "2022" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "EcoBoost" },
+      features: ["سقف قابل للإزالة", "نظام GOAT मोड", "أداء صحراوي"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز فورد برونكو",
+    },
+    {
+      id: 12,
+      name: "Rox 01",
+      images: [{ src: "LuxCars/Rox01.png", year: "2026" }],
+      specs: {
+        passengers: 7,
+        transmission: "أتوماتيك",
+        engine: "Electric/Hybrid",
+      },
+      features: ["تكنولوجيا ذكية", "مساحة داخلية واسعة", "شاشات لمس"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز Rox 01",
     },
   ];
 
   return (
     <>
-      {/* استدعاء السلايدر الموحد */}
       <HomeSidler />
 
       <Container className="my-5" dir="rtl">
@@ -79,7 +170,8 @@ const LuxuryCarsDetails = () => {
                         </Badge>
                         <img
                           className="d-block w-100 card-car-img"
-                          src={imgObj.src}
+                          // التعديل الهام لضمان ظهور الصور في GitHub Pages
+                          src={`${import.meta.env.BASE_URL}${imgObj.src}`}
                           alt={car.name}
                         />
                       </div>
@@ -122,7 +214,6 @@ const LuxuryCarsDetails = () => {
                     </Col>
                   </Row>
 
-                  {/* قائمة المميزات - تم نقلها داخل الـ Card.Body لتعمل بشكل صحيح */}
                   <div className="features-list d-flex flex-wrap justify-content-center gap-2 mb-3">
                     {car.features.map((feature, fIndex) => (
                       <Badge
@@ -138,7 +229,6 @@ const LuxuryCarsDetails = () => {
                     ))}
                   </div>
 
-                  {/* نظام الإيجار - داخل الـ Card.Body */}
                   <div
                     className="rental-info-box mb-3 p-2 border rounded shadow-sm bg-white"
                     style={{ borderStyle: "dashed" }}
@@ -180,7 +270,7 @@ const LuxuryCarsDetails = () => {
 
       <style>{`
         .card-img-container { aspect-ratio: 16 / 9; background-color: #f8f9fa; }
-        .card-car-img { width: 100%; height: 100%; object-fit: contain; padding: 5px; }
+        .card-car-img { width: 100%; height: 100%; object-fit: contain; }
         .year-badge { position: absolute; top: 15px; right: 15px; background-color: #fc8b1a; z-index: 10; padding: 8px 15px; }
         .whatsapp-btn { border-radius: 12px; font-weight: bold; background-color: #28a745; border: none; display: flex; align-items: center; justify-content: center; padding: 12px; transition: 0.3s; }
         .whatsapp-btn:hover { background-color: #218838; transform: scale(1.02); }

@@ -2,9 +2,9 @@ import React from "react";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/Col";
-import ImageServices from "/public/غلاف.PNG";
-import ServicesImage from "../../Images/servies.jpg";
-import imegEnd from "../../Images/leading2.8d9acc49266851480fe6.jpg";
+import ImageServices from "/cover.png";
+import ServicesImage from "/servies.jpg";
+import imegEnd from "/personVip.jpg";
 import { Zoom } from "react-awesome-reveal";
 import { useTranslation } from "react-i18next"; // استيراد الهوك
 

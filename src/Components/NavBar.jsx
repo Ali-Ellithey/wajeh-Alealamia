@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
-import logo from "../Images/logo.png";
+import logo from "/logo.png";
 import { Link } from "react-router-dom";
 import { HashLink as NavHashLink } from "react-router-hash-link";
 import { useTranslation } from "react-i18next";

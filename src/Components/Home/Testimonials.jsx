@@ -2,8 +2,8 @@ import React from "react";
 import Container from "react-bootstrap/esm/Container";
 import Slider from "react-slick";
 import { useTranslation } from "react-i18next";
-import tastImage from "../../img_car/9c264c54af831781aca6d8ad55e3eb57.jpg";
-import tastImage2 from "../../img_car/d5284aa743393e61b179fd059870db70.jpg";
+import tastImage from "/public/commitbentlay.jpg";
+import tastImage2 from "/public/commit.jpg";
 
 export const Testimonials = () => {
   const { t, i18n } = useTranslation();

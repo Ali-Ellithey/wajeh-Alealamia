@@ -3,9 +3,9 @@ import Container from "react-bootstrap/esm/Container";
 import Button from "react-bootstrap/Button";
 import { Zoom } from "react-awesome-reveal";
 import { useTranslation } from "react-i18next"; // استيراد الهوك
-import ServiceImg1 from "../../Images/Insurance.jpg";
-import ServiceImg2 from "../../Images/car-rental1.jpg";
-import ServiceImg3 from "../../Images/convenio-500x250.jpg";
+import ServiceImg1 from "/public/Insurance.jpg";
+import ServiceImg2 from "/public/car-rental1.jpg";
+import ServiceImg3 from "/public/convenio-500x250.jpg";
 
 export const InvestMents = () => {
   const { t } = useTranslation();

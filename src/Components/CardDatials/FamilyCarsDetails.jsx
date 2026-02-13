@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"; // إزالة الاستيراد المكرر لـ React
+import React, { useEffect } from "react";
 import {
   Container,
   Row,
@@ -19,12 +19,8 @@ import {
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
-// 1. استيراد السلايدر (تأكد من صحة المسار)
+// 1. استيراد السلايدر
 import HomeSidler from "../Home/HomeSidler";
-
-// استيراد صور الكروت
-import img1 from "../../img_car/سعر-سيارة-بنتلي-بينتايجا-جديدة-.jpg";
-import img2 from "../../img_car/5f0d5229e9c27Ford_Bronco_4_door_2021_front_dubai_uae.jpg";
 
 const FamilyCarsDetails = () => {
   const { t } = useTranslation();
@@ -33,41 +29,102 @@ const FamilyCarsDetails = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const luxuryCars = [
+  // مصفوفة السيارات العائلية - تأكد من وجود المجلد FamilyCars داخل public
+  const familyCars = [
     {
       id: 1,
-      name: "بنتلي بينتايجا",
-      images: [
-        { src: img1, year: "2024" },
-        { src: img2, year: "2023" },
-      ],
-      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V12" },
-      features: ["تكييف خلفي", "مقاعد جلد", "نظام صوتي", "شاشات خلفية"],
-      rentalOptions: { minAge: 21 },
-      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز بنتلي بينتايجا",
+      name: "Chevrolet Tahoe",
+      images: [{ src: "FamilyCars/ChevroletTahoe.png", year: "2024" }],
+      specs: { passengers: 8, transmission: "أتوماتيك", engine: "V8" },
+      features: ["مثالية للعائلات", "شنطة خلفية واسعة", "شاشات خلفية"],
+      rentalOptions: { minAge: 25 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز شيفروليه تاهو",
     },
     {
       id: 2,
-      name: "مرسيدس مايباخ",
-      images: [
-        { src: img1, year: "2024" },
-        { src: img2, year: "2022" },
-      ],
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "V8" },
-      features: ["تكييف خلفي", "مقاعد جلد", "نظام صوتي", "شاشات خلفية"],
+      name: "Toyota Land Cruiser",
+      images: [{ src: "FamilyCars/ToyotaLandCruiser.png", year: "2023" }],
+      specs: {
+        passengers: 7,
+        transmission: "أتوماتيك",
+        engine: "V6 Twin Turbo",
+      },
+      features: ["ثبات عالي", "فخامة", "مساحة واسعة"],
+      rentalOptions: { minAge: 25 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز لاند كروزر",
+    },
+    {
+      id: 3,
+      name: "Toyota Prado",
+      images: [{ src: "FamilyCars/ToyotaPrado.png", year: "2025" }],
+      specs: { passengers: 7, transmission: "أتوماتيك", engine: "V6" },
+      features: ["اعتمادية عالية", "تكييف مركزي", "دفع رباعي"],
       rentalOptions: { minAge: 21 },
-      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز مرسيدس مايباخ",
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز تويوتا برادو",
+    },
+    {
+      id: 4,
+      name: "Nissan Patrol Titanium",
+      images: [{ src: "FamilyCars/NissanPatrolTitanium.png", year: "2025" }],
+      specs: { passengers: 8, transmission: "أتوماتيك", engine: "V8" },
+      features: ["قوة جبارة", "مقاعد جلد", "نظام ترفيه"],
+      rentalOptions: { minAge: 25 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز نيسان باترول",
+    },
+    {
+      id: 5,
+      name: "Mitsubishi Pajero",
+      images: [{ src: "FamilyCars/MitsubishiPajero.png", year: "2022" }],
+      specs: { passengers: 7, transmission: "أتوماتيك", engine: "3.8L" },
+      features: ["متانة", "اقتصادية", "دفع رباعي"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز باجيرو",
+    },
+    {
+      id: 6,
+      name: "Jeep Sport",
+      images: [{ src: "FamilyCars/JeepSport.png", year: "2023" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6" },
+      features: ["روح المغامرة", "سقف قابل للإزالة", "أداء جبلي"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز جيب سبورت",
+    },
+    {
+      id: 7,
+      name: "Jeep Sahara",
+      images: [{ src: "FamilyCars/JeepSahara.png", year: "2025" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V6" },
+      features: ["تصميم أيقوني", "راحة محسنة", "نظام صوتي مميز"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز جيب صحارى",
+    },
+    {
+      id: 8,
+      name: "GMC Yukon",
+      images: [{ src: "FamilyCars/GMCYukon.png", year: "2025" }],
+      specs: { passengers: 8, transmission: "أتوماتيك", engine: "V8" },
+      features: ["رحابة فائقة", "تقنيات سلامة", "عزل صوتي"],
+      rentalOptions: { minAge: 25 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز جمس يوكن",
+    },
+    {
+      id: 9,
+      name: "Jetour T2",
+      images: [{ src: "FamilyCars/jetour.png", year: "2026" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "Turbo" },
+      features: ["دفع رباعي", "شاشة كبيرة", "كاميرات 360"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز جيتور T2",
     },
   ];
 
   return (
     <>
-      {/* استدعاء السلايدر الموحد */}
       <HomeSidler />
 
       <Container className="my-5" dir="rtl">
         <Row className="gx-4 gy-4">
-          {luxuryCars.map((car) => (
+          {familyCars.map((car) => (
             <Col key={car.id} xs={12} lg={6}>
               <Card className="shadow-sm border-0 h-100 overflow-hidden car-card">
                 <Carousel interval={null} indicators={true}>
@@ -79,7 +136,7 @@ const FamilyCarsDetails = () => {
                         </Badge>
                         <img
                           className="d-block w-100 card-car-img"
-                          src={imgObj.src}
+                          src={`${import.meta.env.BASE_URL}${imgObj.src}`}
                           alt={car.name}
                         />
                       </div>
@@ -122,7 +179,6 @@ const FamilyCarsDetails = () => {
                     </Col>
                   </Row>
 
-                  {/* قائمة المميزات - تم نقلها داخل الـ Card.Body لتعمل بشكل صحيح */}
                   <div className="features-list d-flex flex-wrap justify-content-center gap-2 mb-3">
                     {car.features.map((feature, fIndex) => (
                       <Badge
@@ -138,7 +194,6 @@ const FamilyCarsDetails = () => {
                     ))}
                   </div>
 
-                  {/* نظام الإيجار - داخل الـ Card.Body */}
                   <div
                     className="rental-info-box mb-3 p-2 border rounded shadow-sm bg-white"
                     style={{ borderStyle: "dashed" }}
@@ -180,7 +235,7 @@ const FamilyCarsDetails = () => {
 
       <style>{`
         .card-img-container { aspect-ratio: 16 / 9; background-color: #f8f9fa; }
-        .card-car-img { width: 100%; height: 100%; object-fit: contain; padding: 5px; }
+        .card-car-img { width: 100%; height: 100%; object-fit: contain; }
         .year-badge { position: absolute; top: 15px; right: 15px; background-color: #fc8b1a; z-index: 10; padding: 8px 15px; }
         .whatsapp-btn { border-radius: 12px; font-weight: bold; background-color: #28a745; border: none; display: flex; align-items: center; justify-content: center; padding: 12px; transition: 0.3s; }
         .whatsapp-btn:hover { background-color: #218838; transform: scale(1.02); }

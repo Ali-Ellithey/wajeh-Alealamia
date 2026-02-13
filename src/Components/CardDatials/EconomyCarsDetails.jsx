@@ -23,8 +23,8 @@ import { useTranslation } from "react-i18next";
 import HomeSidler from "../Home/HomeSidler";
 
 // استيراد صور الكروت
-import img1 from "../../img_car/سعر-سيارة-بنتلي-بينتايجا-جديدة-.jpg";
-import img2 from "../../img_car/5f0d5229e9c27Ford_Bronco_4_door_2021_front_dubai_uae.jpg";
+import img1 from "/public/BagCar2.png";
+import img2 from "/public/BagCar2.png";
 
 const EconomyCarsDetails = () => {
   const { t } = useTranslation();
@@ -180,7 +180,7 @@ const EconomyCarsDetails = () => {
 
       <style>{`
         .card-img-container { aspect-ratio: 16 / 9; background-color: #f8f9fa; }
-        .card-car-img { width: 100%; height: 100%; object-fit: contain; padding: 5px; }
+        .card-car-img { width: 100%; height: 100%; object-fit: contain;  }
         .year-badge { position: absolute; top: 15px; right: 15px; background-color: #fc8b1a; z-index: 10; padding: 8px 15px; }
         .whatsapp-btn { border-radius: 12px; font-weight: bold; background-color: #28a745; border: none; display: flex; align-items: center; justify-content: center; padding: 12px; transition: 0.3s; }
         .whatsapp-btn:hover { background-color: #218838; transform: scale(1.02); }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"; // إزالة الاستيراد المكرر لـ React
+import React, { useEffect } from "react";
 import {
   Container,
   Row,
@@ -19,12 +19,8 @@ import {
 } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 
-// 1. استيراد السلايدر (تأكد من صحة المسار)
+// 1. استيراد السلايدر
 import HomeSidler from "../Home/HomeSidler";
-
-// استيراد صور الكروت
-import img1 from "../../img_car/سعر-سيارة-بنتلي-بينتايجا-جديدة-.jpg";
-import img2 from "../../img_car/5f0d5229e9c27Ford_Bronco_4_door_2021_front_dubai_uae.jpg";
 
 const SuvCarsDetails = () => {
   const { t } = useTranslation();
@@ -33,41 +29,93 @@ const SuvCarsDetails = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const luxuryCars = [
+  // مصفوفة نظيفة بدون مسافات زائدة في المسارات
+  const suvCars = [
     {
       id: 1,
-      name: "بنتلي بينتايجا",
-      images: [
-        { src: img1, year: "2024" },
-        { src: img2, year: "2023" },
-      ],
-      specs: { passengers: 5, transmission: "أتوماتيك", engine: "V12" },
-      features: ["تكييف خلفي", "مقاعد جلد", "نظام صوتي", "شاشات خلفية"],
+      name: "Mustang GT",
+      images: [{ src: "SportsCars/RedMustangGT.png", year: "2024" }],
+      specs: { passengers: 4, transmission: "أتوماتيك", engine: "V8" },
+      features: ["أداء رياضي", "سقف مكشوف", "نظام صوتي صاخب"],
       rentalOptions: { minAge: 21 },
-      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز بنتلي بينتايجا",
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز موستانج GT",
     },
     {
       id: 2,
-      name: "مرسيدس مايباخ",
-      images: [
-        { src: img1, year: "2024" },
-        { src: img2, year: "2022" },
-      ],
-      specs: { passengers: 4, transmission: "أتوماتيك", engine: "V8" },
-      features: ["تكييف خلفي", "مقاعد جلد", "نظام صوتي", "شاشات خلفية"],
+      name: "Porsche Carrera 911",
+      images: [{ src: "SportsCars/PorscheCarrera911.png", year: "2025" }],
+      specs: { passengers: 2, transmission: "PDK", engine: "Flat-6" },
+      features: ["تسارع رهيب", "ثبات عالي", "فخامة رياضية"],
+      rentalOptions: { minAge: 25 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز بورشه كاريرا",
+    },
+    {
+      id: 3,
+      name: "McLaren Artura",
+      images: [{ src: "SportsCars/McLarenArtura.png", year: "2022" }],
+      specs: { passengers: 2, transmission: "أتوماتيك", engine: "Hybrid V6" },
+      features: ["تكنولوجيا هجينة", "أبواب مقصية", "وزن خفيف"],
+      rentalOptions: { minAge: 25 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز ماكلارين أرتورا",
+    },
+    {
+      id: 4,
+      name: "Ford F150",
+      images: [{ src: "SportsCars/FordF150.png", year: "2025" }],
+      specs: { passengers: 5, transmission: "أتوماتيك", engine: "EcoBoost" },
+      features: ["دفع رباعي", "قوة سحب", "مساحة ضخمة"],
       rentalOptions: { minAge: 21 },
-      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز مرسيدس مايباخ",
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز فورد F150",
+    },
+    {
+      id: 5,
+      name: "Corvette C8",
+      images: [{ src: "SportsCars/Corvette8C.png", year: "2023" }],
+      specs: {
+        passengers: 2,
+        transmission: "أتوماتيك",
+        engine: "V8 Mid-Engine",
+      },
+      features: ["تصميم سوبر كار", "سقف قابل للإزالة", "شاشات متطورة"],
+      rentalOptions: { minAge: 25 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز كورفيت C8",
+    },
+    {
+      id: 6,
+      name: "Mini Cooper",
+      images: [{ src: "SportsCars/MiniCooper.png", year: "2023" }],
+      specs: { passengers: 4, transmission: "أتوماتيك", engine: "Turbo 4" },
+      features: ["سهولة الاصطفاف", "تصميم كلاسيكي", "اقتصادية"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز ميني كوبر",
+    },
+    {
+      id: 7,
+      name: "Suzuki Jimny",
+      images: [{ src: "SportsCars/BlackJimny.png", year: "2025" }],
+      specs: { passengers: 4, transmission: "أتوماتيك", engine: "1.5L" },
+      features: ["دفع رباعي خفيف", "مثالية للمدينة", "مظهر قوي"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز سوزوكي جيمني",
+    },
+    {
+      id: 8,
+      name: "Fiat 500C",
+      images: [{ src: "SportsCars/FiatC500.png", year: "2023" }],
+      specs: { passengers: 4, transmission: "أتوماتيك", engine: "اقتصادي" },
+      features: ["سقف قماشي مكشوف", "أنيقة جداً", "سهلة القيادة"],
+      rentalOptions: { minAge: 21 },
+      whatsappLink: "https://wa.me/+96590930061?text=أريد حجز فيات 500C",
     },
   ];
 
   return (
     <>
-      {/* استدعاء السلايدر الموحد */}
       <HomeSidler />
 
       <Container className="my-5" dir="rtl">
         <Row className="gx-4 gy-4">
-          {luxuryCars.map((car) => (
+          {suvCars.map((car) => (
             <Col key={car.id} xs={12} lg={6}>
               <Card className="shadow-sm border-0 h-100 overflow-hidden car-card">
                 <Carousel interval={null} indicators={true}>
@@ -79,7 +127,8 @@ const SuvCarsDetails = () => {
                         </Badge>
                         <img
                           className="d-block w-100 card-car-img"
-                          src={imgObj.src}
+                          // تأكد أن السلاش يوضع بشكل صحيح بين المسار الأساسي ومسار الصورة
+                          src={`${import.meta.env.BASE_URL}${imgObj.src}`}
                           alt={car.name}
                         />
                       </div>
@@ -122,7 +171,6 @@ const SuvCarsDetails = () => {
                     </Col>
                   </Row>
 
-                  {/* قائمة المميزات - تم نقلها داخل الـ Card.Body لتعمل بشكل صحيح */}
                   <div className="features-list d-flex flex-wrap justify-content-center gap-2 mb-3">
                     {car.features.map((feature, fIndex) => (
                       <Badge
@@ -138,12 +186,10 @@ const SuvCarsDetails = () => {
                     ))}
                   </div>
 
-                  {/* نظام الإيجار - داخل الـ Card.Body */}
                   <div
                     className="rental-info-box mb-3 p-2 border rounded shadow-sm bg-white"
                     style={{ borderStyle: "dashed" }}
                   >
-                    <h6>ايجارك</h6>
                     <div className="d-flex justify-content-around mb-2">
                       <span style={{ fontSize: "0.85rem", fontWeight: "600" }}>
                         <FaCalendarAlt className="text-primary me-1" /> يومي
@@ -181,7 +227,7 @@ const SuvCarsDetails = () => {
 
       <style>{`
         .card-img-container { aspect-ratio: 16 / 9; background-color: #f8f9fa; }
-        .card-car-img { width: 100%; height: 100%; object-fit: contain; padding: 5px; }
+        .card-car-img { width: 100%; height: 100%; object-fit: contain; }
         .year-badge { position: absolute; top: 15px; right: 15px; background-color: #fc8b1a; z-index: 10; padding: 8px 15px; }
         .whatsapp-btn { border-radius: 12px; font-weight: bold; background-color: #28a745; border: none; display: flex; align-items: center; justify-content: center; padding: 12px; transition: 0.3s; }
         .whatsapp-btn:hover { background-color: #218838; transform: scale(1.02); }

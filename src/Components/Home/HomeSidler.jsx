@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { Fade } from "react-awesome-reveal";
 import { useTranslation } from "react-i18next";
 
-import imgSlider1 from "/غلاف.png";
-import imgSlider2 from "/فارهة.png";
-import imgSlider3 from "/رياضية-1.png";
+import imgSlider1 from "/cover.png";
+import imgSlider2 from "/Lux.png";
+import imgSlider3 from "/sport1.png";
 
 export const HomeSidler = () => {
   const { t } = useTranslation();

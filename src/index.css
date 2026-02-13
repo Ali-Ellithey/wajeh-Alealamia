@@ -357,7 +357,7 @@ img {
   /* مسار الصورة - تأكد من صحة المسار */
   background-image:
     linear-gradient(rgba(33, 39, 65, 0.7), rgba(33, 39, 65, 0.7)),
-    url(/public/040920231046546432979ea8f93.jpg);
+    url(/public/Business.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -771,7 +771,7 @@ img {
   /* أضفنا linear-gradient قبل الـ url لإنشاء طبقة ظل خافتة */
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(./Images/calculator-bg.3e1e3d3b0debe48c0ff2.jpg);
+    url(./public/ServicesHome.jpg);
 
   background-position: center;
   background-repeat: no-repeat;
@@ -963,7 +963,7 @@ img {
 /* start contact */
 
 .contactHome {
-  background-image: url(./Images/ContactUs.webp);
+  background-image: url(./public/ContactUs.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

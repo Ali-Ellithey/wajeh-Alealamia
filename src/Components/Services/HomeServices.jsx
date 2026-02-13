@@ -7,7 +7,6 @@ export const HomeServices = () => {
   return (
     <div className="ServicesHome">
       <h2>{t("services_title")}</h2> {/* استخدام المفتاح المترجم */}
-      <div className="line"></div>
     </div>
   );
 };

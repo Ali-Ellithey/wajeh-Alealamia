@@ -15,16 +15,16 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
 // استيراد الصور (تأكد من صحة المسارات)
-import imgs0 from "/غلاف.png";
-import imgs1 from "/رياضية-1.png";
-import imgs2 from "/رياضية-2.png";
-import imgs3 from "/رياضية-3.png";
-import imgs4 from "/فارهة.png";
-import imgs5 from "/اقتصادية.png";
-import imgs6 from "/اقتصادية2.png";
-import imgs7 from "/اقتصادية3.png";
-import imgs8 from "/كبير.png";
-import imgs9 from "/كبير2.png";
+import imgs0 from "/cover.png";
+import imgs1 from "/sport1.png";
+import imgs2 from "/sport2.png";
+import imgs3 from "/sport3.png";
+import imgs4 from "/Lux.png";
+import imgs5 from "/Suv.png";
+import imgs6 from "/Suv2.png";
+import imgs7 from "/Suv3.png";
+import imgs8 from "/BagCar.png";
+import imgs9 from "/BagCar2.png";
 
 export const Services = () => {
   const { t } = useTranslation();
